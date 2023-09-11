@@ -20,5 +20,8 @@ data:
             <h2>
             The secret is <a href="/secret/secret">secret</a>
             </h2>
+            <h2>
+            The secret2 is <a href="/secret2/example">secret</a>
+            </h2>
           </body>
       </html>

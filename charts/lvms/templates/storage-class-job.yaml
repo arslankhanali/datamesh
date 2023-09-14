@@ -19,9 +19,6 @@ spec:
         name: annotate-sc
       dnsPolicy: ClusterFirst
       restartPolicy: Never
-      serviceAccount: {{ .Values.serviceAccountName }}
-      serviceAccountName: {{ .Values.serviceAccountName }}
+      serviceAccount: default
+      serviceAccountName: default
       terminationGracePeriodSeconds: 400
-
-# Give service account permissions
-# oc adm policy -n openshift-storage add-cluster-role-to-user cluster-admin -z default

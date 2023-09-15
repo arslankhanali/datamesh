@@ -59,7 +59,7 @@ clusterGroup:
       project: hub
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
-      targetRevision: 1.3.1
+      targetRevision: 1.3.*
       extraLocalClusterDomainFields:
       - app-domain
       overrides:

@@ -19,6 +19,6 @@ spec:
         name: annotate-sc
       dnsPolicy: ClusterFirst
       restartPolicy: Never
-      serviceAccount: default
-      serviceAccountName: default
+      serviceAccount: {{ .Values.rbac.name }}-sa
+      serviceAccountName: {{ .Values.rbac.name }}-sa
       terminationGracePeriodSeconds: 400

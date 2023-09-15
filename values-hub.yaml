@@ -6,9 +6,8 @@ clusterGroup:
     - open-cluster-management
     - vault
     - golang-external-secrets
-    # - hello-world
-    # - config-demo
     - openshift-storage
+    - ipa
 
   subscriptions:
     acm:
@@ -21,12 +20,8 @@ clusterGroup:
       namespace: openshift-storage
       channel: stable-4.12
 
-
   projects:
     - hub
-    - lvms
-    # - config-demo
-    # - hello-world
 
   applications:
     acm:
@@ -39,7 +34,12 @@ clusterGroup:
         kind: ManagedClusterInfo
         jsonPointers:
           - /spec/loggingCA
-    
+
+    lvms:
+      name: lvms
+      namespace: openshift-storage
+      project: hub
+      path: charts/lvms
 
     vault:
       name: vault
@@ -53,23 +53,37 @@ clusterGroup:
       project: hub
       path: common/golang-external-secrets
 
-    lvms:
-      name: lvms
-      namespace: openshift-storage
+    ipa:
+      name: ipa
+      namespace: ipa
       project: hub
-      path: charts/lvms
+      repoURL: https://redhat-cop.github.io/helm-charts
+      chart: ipa
+      targetRevision: 1.3.1
+      overrides:
+      - name: ocp_auth.bind_dn
+        value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
+      - name: app_domain
+        value: "beekhof.aws.validatedpatterns.io"
+      - name: ocp_auth.bind_password
+        value: "supersecret"
+      - name: ocp_auth.admin_password
+        value: "alsosecret"
+      - name: ocp_auth.enabled
+        value: "true"
 
-    # config-demo:
-    #   name: config-demo
-    #   namespace: config-demo
-    #   project: config-demo
-    #   path: charts/all/config-demo
 
-    # hello-world:
-    #   name: hello-world
-    #   namespace: hello-world
-    #   project: hello-world
-    #   path: charts/all/hello-world
+#    config-demo:
+#      name: config-demo
+#      namespace: config-demo
+#      project: config-demo
+#      path: charts/all/config-demo
+#
+#    hello-world:
+#      name: hello-world
+#      namespace: hello-world
+#      project: hello-world
+#      path: charts/all/hello-world
 
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm

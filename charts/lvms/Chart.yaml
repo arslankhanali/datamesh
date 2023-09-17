@@ -6,6 +6,6 @@ name: lvms
 version: 0.0.1
 dependencies:
 - name: rbac
-  version: "0.1.5"
-  repository: "https://day0hero.github.io/helm-charts"
+  version: "*"
+  repository: "https://github.com/arslankhanali/rbac-chart"
 #  repository: "https://charts.validatedpatterns.io/"

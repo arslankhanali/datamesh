@@ -12,7 +12,20 @@ spec:
         - /bin/bash
         - -ce
         - |
-          oc annotate sc/lvms-{{ .Values.lvms.volumeGroup }} storageclass.kubernetes.io/is-default-class=true
+          storageClassName="lvms-{{ .Values.lvms.volumeGroup }}"
+          desiredAnnotationValue="true"
+
+          # Check if the annotation is already set to the desired value
+          currentAnnotationValue=$(oc get sc/"$storageClassName" -o=jsonpath='{.metadata.annotations.storageclass\.kubernetes\.io/is-default-class}')
+
+          # If the current value is not equal to the desired value, update the annotation
+          if [[ "$currentAnnotationValue" != "$desiredAnnotationValue" ]]; then
+              oc annotate sc/"$storageClassName" storageclass.kubernetes.io/is-default-class="$desiredAnnotationValue"
+              echo "Annotation updated."
+          else
+              echo "Annotation is already set to '$desiredAnnotationValue'. No update needed."
+          fi
+          # oc annotate sc/lvms-{{ .Values.lvms.volumeGroup }} storageclass.kubernetes.io/is-default-class=true
           set +e
           oc annotate sc/gp2 storageclass.kubernetes.io/is-default-class-
           oc annotate sc/gp3-csi storageclass.kubernetes.io/is-default-class-

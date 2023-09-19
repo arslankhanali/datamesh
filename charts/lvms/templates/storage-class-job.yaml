@@ -25,6 +25,7 @@ spec:
           else
               echo "Annotation is already set to '$desiredAnnotationValue'. No update needed."
           fi
+          # old statment below commented out. 1 line
           # oc annotate sc/lvms-{{ .Values.lvms.volumeGroup }} storageclass.kubernetes.io/is-default-class=true
           set +e
           oc annotate sc/gp2 storageclass.kubernetes.io/is-default-class-

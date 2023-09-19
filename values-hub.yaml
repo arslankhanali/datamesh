@@ -24,6 +24,7 @@ clusterGroup:
     - hub
 
   applications:
+
     acm:
       name: acm
       namespace: open-cluster-management
@@ -34,6 +35,13 @@ clusterGroup:
         kind: ManagedClusterInfo
         jsonPointers:
           - /spec/loggingCA
+
+    stackimg:
+      name: stack
+      project: hub
+      repoURL: https://github.com/day0hero/datamesh/
+      path: charts/all/stack
+      targetRevision: datamesh
 
     # lvms:
     #   name: lvms

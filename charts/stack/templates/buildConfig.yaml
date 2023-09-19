@@ -20,10 +20,10 @@ spec:
       kind: ImageStreamTag
       name: stack-ubi:latest
   # This keeps on creating new builds
-  # triggers:
-  # - type: ImageChange
-  #   imageChange:
-  #     from:
-  #       kind: ImageStreamTag
-  #       name: stack-ubi:latest
-  #       namespace: datamesh
+  triggers:
+  - type: ImageChange
+    imageChange:
+      from:
+        kind: ImageStreamTag
+        name: ubi8-imagestream:ubi8:8.7-1037
+        namespace: datamesh

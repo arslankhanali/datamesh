@@ -3,8 +3,8 @@ description: Configure LVMS
 keywords:
 - pattern
 name: lvms
-version: "*"
-#version: 0.0.1
+#version: "*"
+version: 0.0.1
 dependencies:
 - name: rbac
   version: "*"

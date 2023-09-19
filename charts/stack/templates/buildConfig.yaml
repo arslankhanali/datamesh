@@ -25,5 +25,5 @@ spec:
     imageChange:
       from:
         kind: ImageStreamTag
-        name: registry.access.redhat.com:ubi8:8.7-1037
+        name: ubi8-imagestream:ubi8:8.7-1037
         namespace: datamesh

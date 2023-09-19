@@ -47,7 +47,6 @@ clusterGroup:
     #   targetRevision: datamesh
 
 # Method2 stackimg: Consume from local repo
-
     stackimg:
       name: stack
       namespace: datamesh

@@ -3,10 +3,10 @@ description: Configure LVMS
 keywords:
 - pattern
 name: lvms
-version: 0.0.1
+version: "*"
+#version: 0.0.1
 dependencies:
 - name: rbac
-  #version: "0.0.2"
   version: "*"
   repository: "https://arslankhanali.github.io/my-helm-charts/"
   #repository: "https://day0hero.github.io/helm-charts"

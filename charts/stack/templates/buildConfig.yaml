@@ -21,4 +21,8 @@ spec:
       name: stack-ubi:latest
   triggers:
   - type: ImageChange
-    imageChange: {}
+    imageChange:
+      from:
+        kind: ImageStreamTag
+        name: stack-ubi:latest
+        namespace: datamesh

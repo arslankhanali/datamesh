@@ -1,7 +1,7 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: registry.access.redhat.com/ubi8/ubi
+  name: registry.access.redhat.com
   namespace: datamesh
 spec:
   lookupPolicy:
@@ -10,4 +10,4 @@ spec:
     - from:
         kind: DockerImage
         name: registry.access.redhat.com/ubi8/ubi:8.7-1037
-      name: 8.7-1037
+      name: ubi8:8.7-1037

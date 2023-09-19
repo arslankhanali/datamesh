@@ -37,13 +37,21 @@ clusterGroup:
         jsonPointers:
           - /spec/loggingCA
 
+# Method1 Consume from external repo
+    # stackimg:
+    #   name: stack
+    #   namespace: datamesh
+    #   project: hub
+    #   repoURL: https://github.com/day0hero/datamesh/
+    #   path: charts/all/stack
+    #   targetRevision: datamesh
+
+# Method2 Consume from local repo
     stackimg:
       name: stack
       namespace: datamesh
       project: hub
-      repoURL: https://github.com/day0hero/datamesh/
-      path: charts/all/stack
-      targetRevision: datamesh
+      path: charts/stack
 
     # lvms:
     #   name: lvms

@@ -19,5 +19,3 @@ spec:
     to:
       kind: ImageStreamTag
       name: stack-ubi:latest
-  triggers:
-    - type: ImageChange

@@ -37,7 +37,7 @@ clusterGroup:
         jsonPointers:
           - /spec/loggingCA
 
-# Method1 Consume from external repo
+# Method1 stackimg: Consume from external repo
     # stackimg:
     #   name: stack
     #   namespace: datamesh
@@ -46,18 +46,19 @@ clusterGroup:
     #   path: charts/all/stack
     #   targetRevision: datamesh
 
-# Method2 Consume from local repo
+# Method2 stackimg: Consume from local repo
+
     stackimg:
       name: stack
       namespace: datamesh
       project: hub
       path: charts/stack
 
-    # lvms:
-    #   name: lvms
-    #   namespace: openshift-storage
-    #   project: hub
-    #   path: charts/lvms
+    lvms:
+      name: lvms
+      namespace: openshift-storage
+      project: hub
+      path: charts/lvms
 
     vault:
       name: vault

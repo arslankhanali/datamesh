@@ -19,10 +19,11 @@ spec:
     to:
       kind: ImageStreamTag
       name: stack-ubi:latest
-  triggers:
-  - type: ImageChange
-    imageChange:
-      from:
-        kind: ImageStreamTag
-        name: stack-ubi:latest
-        namespace: datamesh
+  # This keeps on creating new builds
+  # triggers:
+  # - type: ImageChange
+  #   imageChange:
+  #     from:
+  #       kind: ImageStreamTag
+  #       name: stack-ubi:latest
+  #       namespace: datamesh

@@ -1,0 +1,12 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: ubi8-imagestream
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - from:
+        kind: DockerImage
+        name: registry.access.redhat.com/ubi8/ubi:8.7-1037
+      name: ubi8:8.7-1037

@@ -10,4 +10,4 @@ spec:
     - from:
         kind: DockerImage
         name: registry.access.redhat.com/ubi8/ubi:8.7-1037
-      name: registry.access.redhat.com/ubi8/ubi:8.7-1037
+      name: 8.7-1037

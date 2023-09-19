@@ -21,3 +21,8 @@ spec:
       name: stack-ubi:latest
   triggers:
   - type: ImageChange
+    imageChange:
+      lastTriggeredImageID: ""  # This can be left empty
+    from:
+      kind: ImageStreamTag
+      name: stack-ubi:latest

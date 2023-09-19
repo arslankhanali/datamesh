@@ -8,6 +8,7 @@ clusterGroup:
     - golang-external-secrets
     - openshift-storage
     - ipa
+    - datamesh
 
   subscriptions:
     acm:
@@ -38,6 +39,7 @@ clusterGroup:
 
     stackimg:
       name: stack
+      namespace: datamesh
       project: hub
       repoURL: https://github.com/day0hero/datamesh/
       path: charts/all/stack

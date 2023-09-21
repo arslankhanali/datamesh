@@ -98,8 +98,9 @@ clusterGroup:
       - kind: ImageStream
         group: image.openshift.io/v1
         jsonPointers:
-          - /spec/tags/annotations/openshift.io/display-name
-          - /spec/tags/annotations/from/name
+          - /metadata
+          - /spec
+          - /status
       - kind: Secret
         name: v4-0-config-user-idp-1-bind-password
         jsonPointers:

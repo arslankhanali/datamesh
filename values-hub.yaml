@@ -78,7 +78,7 @@ clusterGroup:
       project: ipa
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
-      targetRevision: 1.3.*
+      targetRevision: 1.3.* # using "*" gave me an error
       extraLocalClusterDomainFields:
       - app_domain
       overrides:
@@ -89,7 +89,7 @@ clusterGroup:
       - name: ocp_auth.bind_password
         value: "supersecret"
       - name: admin_password
-        value: {{ $.Values.global.localClusterDomain }}
+        value: "alsosecret"
       - name: ocp_auth.enabled
         value: "true"
 

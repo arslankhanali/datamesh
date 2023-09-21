@@ -98,15 +98,17 @@ clusterGroup:
       - kind: ImageStream
         group: image.openshift.io/v1
         jsonPointers:
-          - /spec
-      - name: v4-0-config-user-idp-1-bind-password
-        kind: Secret
+          - /spec/
+      - kind: Secret
+        name: v4-0-config-user-idp-1-bind-password
+        jsonPointers:
+          - /
       - kind: Service
         jsonPointers:
           - /spec/clusterIP
-      - jsonPointers:
-          - /spec
-        kind: DeploymentConfig
+      - kind: DeploymentConfig
+        jsonPointers:
+          - /spec/clusterIP
 
 #    config-demo:
 #      name: config-demo

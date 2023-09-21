@@ -93,7 +93,9 @@ clusterGroup:
       - name: ocp_auth.enabled
         value: "true"
       ignoreDifferences:
-      - kind: Secret
+      - jsonPointers:
+        - /spec
+        kind: ServicImageStreameAccount
 
 
 #    config-demo:

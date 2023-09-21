@@ -103,7 +103,9 @@ clusterGroup:
       - jsonPointers:
         - /spec/clusterIP
         kind: Service
-
+      - jsonPointers:
+        - /spec
+        kind: DeploymentConfig
 
 #    config-demo:
 #      name: config-demo

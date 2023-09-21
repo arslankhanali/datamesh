@@ -45,7 +45,7 @@ clusterGroup:
     #   project: hub
     #   repoURL: https://github.com/day0hero/datamesh/
     #   path: charts/all/stack
-    #   targetRevision: datamesh #for branch
+    #   targetRevision: datamesh
 
 # Method2 stackimg: Consume from local repo
     stackimg:
@@ -75,28 +75,23 @@ clusterGroup:
     ipa:
       name: ipa
       namespace: ipa
-      project: hub
+      project: ipa
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
-      targetRevision: "*"
-      # extraLocalClusterDomainFields:
-      # - app_domain
+      targetRevision: *
+      extraLocalClusterDomainFields:
+      - app-domain
       overrides:
-      - name: app_domain
-        value: "apps.cluster-lmxx5.lmxx5.sandbox2112.opentlc.com"
-      - name: ocp_auth.enabled
-        value: "true"
-      - name: ocp_auth.enabled
-        value: "true"
       - name: ocp_auth.bind_dn
         value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
       # - name: app_domain
-      #   value: '{{ .Values.global.localClusterDomain }}'
+      #   value: "beekhof.aws.validatedpatterns.io"
       - name: ocp_auth.bind_password
         value: "supersecret"
-      - name: admin_password
+      - name: ocp_auth.admin_password
         value: "alsosecret"
-      
+      - name: ocp_auth.enabled
+        value: "true"
 
 
 #    config-demo:

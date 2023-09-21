@@ -78,7 +78,7 @@ clusterGroup:
       project: ipa
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
-      targetRevision: "*"
+      targetRevision: '*'
       # extraLocalClusterDomainFields:
       # - app_domain
       overrides:

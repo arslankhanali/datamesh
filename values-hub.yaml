@@ -54,11 +54,11 @@ clusterGroup:
       project: hub
       path: charts/stack
 
-    lvms:
-      name: lvms
-      namespace: openshift-storage
-      project: hub
-      path: charts/lvms
+    # lvms:
+    #   name: lvms
+    #   namespace: openshift-storage
+    #   project: hub
+    #   path: charts/lvms
 
     vault:
       name: vault
@@ -98,9 +98,7 @@ clusterGroup:
       - jsonPointers:
         - /spec
         kind: ImageStream
-      - jsonPointers:
-        - /spec
-        name: v4-0-config-user-idp-1-bind-password
+      - name: v4-0-config-user-idp-1-bind-password
         kind: Secret
       - jsonPointers:
         - /spec/clusterIP

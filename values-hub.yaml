@@ -74,7 +74,7 @@ clusterGroup:
     ipa:
       name: ipa
       namespace: ipa
-      project: hub
+      project: ipa
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
       targetRevision: 1.3.*

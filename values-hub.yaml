@@ -92,6 +92,8 @@ clusterGroup:
         value: "alsosecret"
       - name: ocp_auth.enabled
         value: "true"
+      - name: volume 
+        value: "1Gi"
       ignoreDifferences:
       - jsonPointers:
         - /spec

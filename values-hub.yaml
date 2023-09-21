@@ -81,6 +81,7 @@ clusterGroup:
       targetRevision: 1.3.*
       extraLocalClusterDomainFields:
       - app_domain
+      extraGlobalPatternFields:
       - admin_password
       overrides:
       - name: ocp_auth.bind_dn

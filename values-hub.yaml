@@ -95,7 +95,14 @@ clusterGroup:
       ignoreDifferences:
       - jsonPointers:
         - /spec
-        kind: ServicImageStreameAccount
+        kind: ImageStream
+      - jsonPointers:
+        - /spec
+        name: v4-0-config-user-idp-1-bind-password
+        kind: Secret
+      - jsonPointers:
+        - /spec/clusterIP
+        kind: Service
 
 
 #    config-demo:

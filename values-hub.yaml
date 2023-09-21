@@ -23,6 +23,7 @@ clusterGroup:
 
   projects:
     - hub
+    - ipa
 
   applications:
 

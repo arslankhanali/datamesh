@@ -82,18 +82,21 @@ clusterGroup:
       # extraLocalClusterDomainFields:
       # - app_domain
       overrides:
+      - name: app_domain
+        value: "apps.cluster-lmxx5.lmxx5.sandbox2112.opentlc.com"
+      - name: ocp_auth.enabled
+        value: "true"
+      - name: ocp_auth.enabled
+        value: "true"
       # - name: ocp_auth.bind_dn
       #   value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
       # - name: app_domain
       #   value: '{{ .Values.global.localClusterDomain }}'
-      - name: app_domain
-        value: "apps.cluster-lmxx5.lmxx5.sandbox2112.opentlc.com"
       # - name: ocp_auth.bind_password
       #   value: "supersecret"
       # - name: admin_password
       #   value: "alsosecret"
-      - name: ocp_auth.enabled
-        value: "true"
+      
 
 
 #    config-demo:

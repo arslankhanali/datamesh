@@ -23,6 +23,7 @@ clusterGroup:
 
   projects:
     - hub
+    - ipa
 
   applications:
 
@@ -74,7 +75,7 @@ clusterGroup:
     ipa:
       name: ipa
       namespace: ipa
-      project: hub
+      project: ipa
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
       targetRevision: "*"
@@ -87,10 +88,10 @@ clusterGroup:
       #   value: '{{ .Values.global.localClusterDomain }}'
       - name: app_domain
         value: "apps.cluster-lmxx5.lmxx5.sandbox2112.opentlc.com"
-      - name: ocp_auth.bind_password
-        value: "supersecret"
-      - name: ocp_auth.admin_password
-        value: "alsosecret"
+      # - name: ocp_auth.bind_password
+      #   value: "supersecret"
+      # - name: ocp_auth.admin_password
+      #   value: "alsosecret"
       - name: ocp_auth.enabled
         value: "true"
 

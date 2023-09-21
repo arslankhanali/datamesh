@@ -89,7 +89,7 @@ clusterGroup:
       - name: ocp_auth.bind_password
         value: "supersecret"
       - name: admin_password
-        value: {{localClusterDomain}}
+        value: {{ $.Values.global.localClusterDomain }}
       - name: ocp_auth.enabled
         value: "true"
 

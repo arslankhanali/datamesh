@@ -95,9 +95,10 @@ clusterGroup:
       - name: volume 
         value: "1Gi"
       ignoreDifferences:
-      - jsonPointers:
+      - kind: ImageStream
+        group: image.openshift.io/v1
+        jsonPointers:
         - /spec
-        kind: ImageStream
       - name: v4-0-config-user-idp-1-bind-password
         kind: Secret
       - jsonPointers:

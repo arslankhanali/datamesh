@@ -9,6 +9,7 @@ clusterGroup:
     - openshift-storage
     - ipa
     - datamesh
+    - config-demo
 
 
   subscriptions:
@@ -25,6 +26,7 @@ clusterGroup:
   projects:
     - hub
     - ipa
+    - config-demo
 
 
   applications:
@@ -114,11 +116,11 @@ clusterGroup:
         jsonPointers:
           - /spec/clusterIP
 
-    # config-demo:
-    #  name: config-demo
-    #  namespace: config-demo
-    #  project: config-demo
-    #  path: charts/all/config-demo
+    config-demo:
+     name: config-demo
+     namespace: config-demo
+     project: config-demo
+     path: charts/all/config-demo
 #
 #    hello-world:
 #      name: hello-world

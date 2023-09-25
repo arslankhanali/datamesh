@@ -9,7 +9,7 @@ clusterGroup:
     - openshift-storage
     - ipa
     - datamesh
-    - config-demo
+
 
   subscriptions:
     acm:
@@ -25,7 +25,7 @@ clusterGroup:
   projects:
     - hub
     - ipa
-    - config-demo
+
 
   applications:
 
